@@ -100,7 +100,7 @@ bool LightingSphereApplication::update(float deltaTime) {
 
 	// rotate light direction
 	float time = (float)glfwGetTime();
-	m_directionalLight.direction = vec3(sinf(time), 0, cosf(time));
+	m_directionalLight.direction; // = vec3(sinf(time), 0, cosf(time));
 
 	// clear the gizmos and add a transform and grid
 	Gizmos::clear();

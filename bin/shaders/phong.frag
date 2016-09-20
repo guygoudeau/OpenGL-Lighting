@@ -18,10 +18,10 @@ uniform float specularPower;
 
 void main()
 { 
-	vec3 N = normalize(vNormal).xyz; 
+	vec3 N = normalize(vNormal.xyz); 
 	vec3 Lm = normalize(lightDirection);
 	vec3 V = normalize(cameraPosition - vPosition.xyz);
-	vec3 Rm = reflect(Lm, N);
+	vec3 Rm = 2 * dot(N, Lm) * N - Lm;
 
 	vec3 Red = vec3(250, 0, 0);
 	vec3 Green = vec3(0, 250, 0);
