@@ -29,7 +29,7 @@ void main()
 
 	float a = dot(N,vec3(0,1.f,0));
 	vec3 hemisphere = 0.5f + (.5f * mix(Red,Blue,a));
-	float lambertTerm = max(0, dot(N, -Lm));
+	float lambertTerm = max(0, dot(N, Lm));
 	float specularTerm = pow(max(0, dot( Rm, V)), specularPower);
 
 	vec3 ambient =  Ka * (Ia * .01f) * hemisphere;
