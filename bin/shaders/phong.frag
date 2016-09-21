@@ -2,7 +2,6 @@
 #version 410
 
 in vec4 vPosition;
-in vec4 vColour;
 in vec4 vNormal;
 out vec4 fragColor;
 
@@ -28,7 +27,7 @@ void main()
 	vec3 Blue = vec3(0, 0, 250);
 
 	float a = dot(N,vec3(0,1.f,0));
-	vec3 hemisphere = 0.5f + (.5f * mix(Red,Blue,a));
+	vec3 hemisphere = 0.5f + (.5f * mix(Blue,Green,a));
 	float lambertTerm = max(0, dot(N, Lm));
 	float specularTerm = pow(max(0, dot( Rm, V)), specularPower);
 
